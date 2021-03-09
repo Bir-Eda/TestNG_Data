@@ -81,11 +81,12 @@ public class SeleniumMethods1 {
         driver.get("https://the-internet.herokuapp.com/");
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 
         // How to select a value from dropdown menu
         // single value dropdown
         driver.findElement(By.xpath("//*[text()='Dropdown']")).click();
+        Thread.sleep(2000);
         WebElement selDropDown = driver.findElement(By.xpath("//*[@id='dropdown']"));
         Select select = new Select(selDropDown);
         select.selectByIndex(1);
